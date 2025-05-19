@@ -1,0 +1,66 @@
+header {
+    display: flex;
+    background: linear-gradient(to bottom, #61017e, #82319b); /* Makes background of header White */
+    width: 100%; /* Extends the box to its max resolution */
+    height: 70px;
+    justify-content: flex-end;
+}
+
+header nav ul a {
+    text-decoration: none; /* When link is clicked, the underline will not show, keeps it clean */
+}
+
+header nav ul a li {
+    font-weight: 400; /* Bold font */
+    display: inline-block;
+    color: #ffffff;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 10px;
+    padding: 10px 20px;
+    transition: 0.4s ease;
+}
+
+header nav ul li:hover {
+    transition: 0.4s ease; /* Ease for smoothness */
+    transform: scale(0.9); /* When hovering over, list item scales down by .1 */
+    width: auto;
+    color: #bdbdbd; /* Changes color */
+    height: 18px;
+    border-radius: 5px;
+}
+
+header img {
+    display: flex; 
+    position: absolute; /* Setting my invicta logo to the left using absolute */
+    left: 25px;
+    top: -15px;
+    width: 150px;
+    height: auto;
+    transition: 0.4s ease;
+}
+
+header img:hover {
+    transform: scale(0.9); /* When hovering over, image scales down by .1 */
+}
+
+
+@media (max-width: 800px) {
+    header img {
+        display: none;
+    }
+
+    header nav ul a li {
+        display: flex;
+        font-weight: 400; /* Bold font */
+        display: inline-block;
+        color: #ffffff;
+        border-radius: 5px;
+        position: relative;
+        margin-right: 10px;
+        padding: 10px 10px;
+        transition: 0.4s ease;
+        font-size: 12px;
+    }
+
+}

@@ -1,0 +1,54 @@
+* {
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #f7f7f7;
+    min-width: 1000px;
+}
+
+
+/* -----------------------Resume iFrame---------------------------*/
+
+.iframe-resume {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px;
+    position: relative;
+    aspect-ratio: 8.5 / 11;
+}
+
+.iframe-resume iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Adjust for small screens */
+@media (max-width: 600px) {
+    .iframe-resume {
+        padding: 10px;
+        max-width: 100%;
+    }
+}
+
+/* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
+
+footer {
+    background: linear-gradient(to right, #7b1fa2, #8e24aa);
+    /* Purple gradient */
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    bottom: -20vh;
+    z-index: 1;
+}

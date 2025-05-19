@@ -1,0 +1,56 @@
+* {
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+
+
+/* ------------------------------------------------ CONTACT CONTAINER ------------------------------------------------ */
+
+form { /* Form placement in the middle of the page */
+    position: relative;
+    top: 150px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 30px;
+}
+
+.contact-container h1 { /* Changed size and position of h1 tag */
+    top: 150px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+#textbox { /* Making textbox different size compared to original */
+    width: 400px;
+    height: 200px;
+}
+
+.contact-container button {
+    margin-top: 20px;
+}
+
+
+/* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
+
+footer {
+    background: linear-gradient(to right, #7b1fa2, #8e24aa);
+    /* Purple gradient */
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    bottom: -70vh;
+    z-index: 1;
+}
