@@ -300,11 +300,10 @@ i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color
 .project-logo {
     width: 200px;
     margin-bottom: 20px;
-    transition: 0.3s ease;
 }
 
 .project-logo:hover {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 
 .project-description {
@@ -381,14 +380,14 @@ i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color
     #project-top-img:hover {
     transform: translateX(0px)
     translateY(0px)
-    scale(11)
-}
-
-#project-middle-img:hover {
-    transform: translateX(-250px)
-    translateY(0px)
     scale(1)
-}
+    }
+
+    #project-middle-img:hover {
+        transform: translateX(0px)
+        translateY(0px)
+        scale(1)
+    }
 }
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
