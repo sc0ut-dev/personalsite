@@ -392,7 +392,7 @@ i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
 footer {
-    background: linear-gradient(to right, #7b1fa2, #8e24aa);
+    background: linear-gradient(to top, #03394d, #022F40);/* Makes background of header White */
     /* Purple gradient */
     color: white;
     text-align: center;
