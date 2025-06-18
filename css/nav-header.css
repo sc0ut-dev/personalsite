@@ -1,6 +1,6 @@
 header {
     display: flex;
-    background: #022f40;/* Makes background of header White */
+    background: #4e3d42;/* Makes background of header White */
     width: 100%; /* Extends the box to its max resolution */
     height: 70px;
     justify-content: flex-end;
