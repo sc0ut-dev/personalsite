@@ -1,6 +1,6 @@
 header {
     display: flex;
-    background-color: #022f40; /* Makes background of header White */
+    background: linear-gradient(to bottom, #61017e, #82319b)/* Makes background of header White */
     width: 100%; /* Extends the box to its max resolution */
     height: 70px;
     justify-content: flex-end;
