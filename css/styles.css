@@ -44,7 +44,7 @@ body {
 
 i { /* FontAwesome Icon */
     padding: 15px;
-    color: #38AECC;
+    color: #38aecc;
     transition: 0.4s ease;
 }
 
@@ -64,7 +64,7 @@ i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color
     max-height: 400px;
     max-width: 100%;
     box-shadow: 0 0 20px #181818;
-    border-radius: 1000px;
+    border-radius: 100px;
     transition: transform 0.4s ease;
 }
 
