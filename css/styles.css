@@ -206,7 +206,7 @@ main {
     background-color: var(--bg-gray);
     padding: 30px;
     border-radius: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     border-left: 4px solid var(--accent-blue);
 }
 
