@@ -254,7 +254,7 @@ main {
     #about,
     #techstack,
     .project-section {
-        padding: 30px 20px;
+        padding: 30px 25px;
     }
     
     .sections h1 {
@@ -266,6 +266,11 @@ main {
         padding: 0 1.5rem;
     }
 
+    .about-paragraph {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+
     .about-paragraph p {
         font-size: 1rem;
     }
@@ -273,7 +278,7 @@ main {
 
 @media (max-width: 480px) {
     #about {
-        padding: 20px 15px;
+        padding: 25px 20px;
     }
     
     .sections h1 {
@@ -281,7 +286,8 @@ main {
     }
     
     .about-paragraph {
-        padding: 20px;
+        padding: 30px 25px;
+        margin-bottom: 35px;
     }
 }
 
