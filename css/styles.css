@@ -214,6 +214,7 @@ main {
     font-size: 1.125rem;
     color: var(--text-dark);
     line-height: 1.8;
+    text-align: left;
 }
 
 .about-paragraph em {
@@ -247,14 +248,15 @@ main {
 
 @media (max-width: 768px) {
     main {
-        padding: 40px 5%;
-        gap: 30px;
+        padding: 30px 4%;
+        gap: 25px;
     }
     
     #about,
     #techstack,
     .project-section {
-        padding: 30px 25px;
+        padding: 30px 20px;
+        border-radius: 15px;
     }
     
     .sections h1 {
@@ -263,36 +265,51 @@ main {
     
     #about-me {
         margin: 40px auto;
-        padding: 0 1.5rem;
+        padding: 0;
     }
 
     .about-paragraph {
-        padding: 25px;
-        margin-bottom: 30px;
+        padding: 20px 15px;
+        margin-bottom: 25px;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .about-paragraph p {
-        font-size: 1.0625rem;
+        font-size: 0.9375rem;
+        line-height: 1.65;
+        max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
+    main {
+        padding: 20px 3%;
+        gap: 20px;
+    }
+
     #about {
-        padding: 25px 20px;
+        padding: 25px 15px;
+        border-radius: 12px;
     }
     
     .sections h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
     }
     
     .about-paragraph {
-        padding: 30px 25px;
-        margin-bottom: 35px;
+        padding: 18px 12px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 12px;
     }
 
     .about-paragraph p {
-        font-size: 1rem;
-        line-height: 1.7;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        max-width: 100%;
     }
 }
 
@@ -447,7 +464,7 @@ main {
     font-size: 1.05rem;
     line-height: 1.8;
     color: var(--text-dark);
-    text-align: justify;
+    text-align: left;
 }
 
 /* RIGHT: Images */
@@ -493,8 +510,9 @@ main {
     }
 
     .project-description {
-        font-size: 1rem;
+        font-size: 0.9375rem;
         padding: 0 10px;
+        text-align: left;
     }
 
     .project-logo {
