@@ -1,66 +1,116 @@
-header {
+:root {
+    /* Executive Tech Leadership Color Scheme */
+    --primary-navy: #1e3a5f;
+    --primary-navy-dark: #0f1e30;
+    --primary-navy-light: #2c5282;
+    --accent-blue: #3b82f6;
+    --accent-light: #60a5fa;
+    --text-dark: #1a202c;
+    --text-light: #64748b;
+    --bg-white: #ffffff;
+    --bg-gray: #f8fafc;
+    --border-gray: #e2e8f0;
+    --shadow: rgba(30, 58, 95, 0.12);
+}
+
+.nav-header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
     display: flex;
-    background: linear-gradient(to bottom, #022F40, #03394d);/* Makes background of header White */
-    width: 100%; /* Extends the box to its max resolution */
-    height: 70px;
-    justify-content: flex-end;
-}
-
-header nav ul a {
-    text-decoration: none; /* When link is clicked, the underline will not show, keeps it clean */
-}
-
-header nav ul a li {
-    font-weight: 400; /* Bold font */
-    display: inline-block;
-    color: #ffffff;
-    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 5%;
+    box-shadow: 0 4px 20px var(--shadow);
+    z-index: 1000;
     position: relative;
-    margin-right: 10px;
-    padding: 10px 20px;
-    transition: 0.4s ease;
 }
 
-header nav ul li:hover {
-    transition: 0.4s ease; /* Ease for smoothness */
-    transform: scale(0.9); /* When hovering over, list item scales down by .1 */
-    width: auto;
-    color: #bdbdbd; /* Changes color */
-    height: 18px;
-    border-radius: 5px;
+.nav-header img {
+    position: absolute;
+    left: 5%;
+    height: 50px;
+    transition: transform 0.3s ease;
 }
 
-header img {
-    display: flex; 
-    position: absolute; /* Setting my invicta logo to the left using absolute */
-    left: 25px;
-    top: -15px;
-    width: 150px;
-    height: auto;
-    transition: 0.4s ease;
+.nav-header nav {
+    display: flex;
+    justify-content: center;
 }
 
-header img:hover {
-    transform: scale(0.9); /* When hovering over, image scales down by .1 */
+.nav-header img:hover {
+    transform: scale(1.05);
 }
 
+.nav-header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
 
-@media (max-width: 800px) {
-    header img {
-        display: none;
+.nav-header nav ul a {
+    text-decoration: none;
+}
+
+.nav-header nav ul li {
+    color: white;
+    padding: 12px 24px;
+    font-weight: 500;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-header nav ul li::before {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-light);
+    transition: width 0.3s ease;
+}
+
+.nav-header nav ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-header nav ul li:hover::before {
+    width: 60%;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-header {
+        flex-direction: column;
+        padding: 15px 5%;
+        gap: 15px;
     }
-
-    header nav ul a li {
-        display: flex;
-        font-weight: 400; /* Bold font */
-        display: inline-block;
-        color: #ffffff;
-        border-radius: 5px;
-        position: relative;
-        margin-right: 10px;
-        padding: 10px 10px;
-        transition: 0.4s ease;
-        font-size: 12px;
+    
+    .nav-header img {
+        height: 40px;
     }
+    
+    .nav-header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .nav-header nav ul li {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+}
 
+@media (max-width: 480px) {
+    .nav-header nav ul li {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
 }

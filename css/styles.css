@@ -1,160 +1,273 @@
 * {
-    font-weight: 400;
-    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Executive Tech Leadership Color Scheme */
+    --primary-navy: #1e3a5f;
+    --primary-navy-dark: #0f1e30;
+    --primary-navy-light: #2c5282;
+    --accent-blue: #3b82f6;
+    --accent-light: #60a5fa;
+    --text-dark: #1a202c;
+    --text-light: #64748b;
+    --bg-white: #ffffff;
+    --bg-gray: #f8fafc;
+    --border-gray: #e2e8f0;
+    --shadow: rgba(30, 58, 95, 0.12);
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    background-color: #ffffff;
+    background-color: var(--bg-gray);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
 
 /* ------------------------------------------------ INTRO CONTAINER ------------------------------------------------ */
 
 .intro-container {
-    position: relative; 
-    display: flex;  /* FLex display for window flexibility */
-    background-color: #f7f7f7;
-    color:#000000; 
-    text-align: center;
-    align-items: center;
+    display: flex;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    padding: 80px 8%;
+    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-gray) 100%);
     min-height: 80vh;
-    padding: 4rem 0rem;
-    gap: 2rem;
+    gap: 100px;
+    max-width: 1800px;
+    margin: 0 auto;
 }
 
 .intro-header {
-    padding-right: 80px; 
+    flex: 1;
+    max-width: 700px;
 }
 
-.intro-header h4{
-    font-size: 20px; /* Font size of h4 element */
-    font-weight: 500;
+.intro-header h4 {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
-.intro-header h1 { /* Sizing of h1 element */
-    font-size: 60px;
-    font-weight: 500;
+.intro-header h1 {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--primary-navy);
+    margin-bottom: 15px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.intro-header h3 {
+    color: var(--text-dark);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
 
 /* -----FONT AWESOME ICONS----- */
 
-i { /* FontAwesome Icon */
-    padding: 15px;
-    color: #046e8f;
-    transition: 0.4s ease;
+.intro-header a {
+    margin-right: 20px;
+    transition: all 0.3s ease;
+    display: inline-block;
 }
 
-i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color */
-    transform: scale(1.2);
-    color: #000000;
+#linkedin { color: #0077b5; }
+#instagram { color: #E1306C; }
+#youtube { color: #FF0000; }
+#github { color: var(--text-dark); }
+
+.intro-header a:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
 }
 
-.portrait { 
-    top: -5px;
-    left: 50%;
-    padding-bottom: 20px;
+.portrait {
+    flex: 0 0 auto;
 }
 
-.portrait img { /* Adding border radius to make portrait a circle */
-    display: flex;
-    max-height: 400px;
-    max-width: 100%;
-    box-shadow: 0 0 20px #181818;
-    border-radius: 1000px;
-    transition: transform 0.4s ease;
+.portrait img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 40px var(--shadow);
+    transition: transform 0.3s ease;
 }
 
-.portrait img:hover { /* When hovering over portrait, it scales up by .1 */
-    transform: scale(1.2);
+.portrait img:hover {
+    transform: scale(1.05);
 }
 
-@media (max-width: 1300px) { /* change in font sizes and picture size when reducing window size */
+@media (max-width: 1024px) {
+    .intro-container {
+        padding: 60px 5%;
+        gap: 40px;
+    }
+    
     .intro-header h1 {
-        font-size: 30px;
-        padding-left: 25px;
+        font-size: 3rem;
     }
+    
+    .portrait img {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 5%;
+        min-height: auto;
+    }
+    
+    .intro-header {
+        padding-right: 0;
+        text-align: center;
+    }
+    
+    .intro-header h1 {
+        font-size: 2.5rem;
+    }
+    
     .intro-header h4 {
-        font-size: 15px;
-        padding-left: 25px;
+        font-size: 1rem;
     }
-    i { /* FontAwesome Icon */
-        padding: 25px;
-        padding-left: 25px;
-        color: #961bbb;
-        transition: 0.4s ease;
-        width: 0px;
-    }
+    
     .intro-header h3 {
-        font-size: 15px;
-        padding-left: 25px;
+        font-size: 1.2rem;
     }
-    .portrait { 
-        top: -5px;
-        left: 50%;
-        padding-bottom: 20px;
-        padding-right: 40px;
+    
+    .intro-header a {
+        margin-right: 15px;
     }
-    .portrait img:hover { /* When hovering over portrait, it scales up by .1 */
-        transform: scale(1.1);
+    
+    .portrait img {
+        width: 250px;
+        height: 250px;
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-header h1 {
+        font-size: 2rem;
+    }
+    
+    .intro-header h3 {
+        font-size: 1rem;
+    }
+    
+    .intro-header i {
+        font-size: 1.5rem !important;
+    }
+    
+    .portrait img {
+        width: 200px;
+        height: 200px;
     }
 }
 
 /* ------------------------------------------------ ABOUT CONTAINER ------------------------------------------------ */
 
-.about-container {
-    position: relative;
-    display: flex; /* Flex display for window sizes */
-    width: 100%; /* width to full length */
-    height: 950px; /* made height according to how much text was in the container */
-    background-color: rgb(255, 255, 255);
+main {
+    padding: 60px 8%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+#about {
+    background-color: var(--bg-white);
+    border-radius: 20px;
+    padding: 80px;
+    box-shadow: 0 5px 30px var(--shadow);
+}
+
+.sections h1 {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--accent-blue);
+    letter-spacing: -0.02em;
+}
+
+.section-title {
+    text-align: center;
+    margin: 80px 0 40px 0 !important;
 }
 
 #about-me {
-    max-width: 1000px;
-    margin: 80px auto;
-    padding: 0 20px;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-}
-
-#about-me h1 {
-    font-size: 40px;
-    font-weight: 500;
-    margin-bottom: 40px;
-    color: #222;
-    z-index: 1;
-    position: relative;
+    margin-bottom: 60px;
 }
 
 .about-paragraph {
-    margin-bottom: 40px;
-    z-index: 1;
-    position: relative;
+    background-color: var(--bg-gray);
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-blue);
 }
 
 .about-paragraph p {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+    color: var(--text-dark);
     line-height: 1.8;
-    color: #333;
-    z-index: 1;
-    position: relative;
+}
+
+.about-paragraph em {
+    color: var(--primary-navy);
+    font-style: normal;
+    font-weight: 600;
 }
 
 /* Styling the link */
-#invicta-link {
-    color: #1a4dab;
+#invicta-link::after {
+    content: "Invicta Software";
+    color: var(--accent-blue);
+    font-weight: 600;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#invicta-link:hover::after {
+    color: var(--primary-navy);
+    text-decoration: underline;
 }
 
 /* Media Queries */
-@media (max-width: 600px) {
-    #about-me h1 {
+@media (max-width: 1024px) {
+    #about {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 40px 5%;
+    }
+    
+    #about {
+        padding: 30px 20px;
+    }
+    
+    .sections h1 {
         font-size: 2rem;
+    }
+    
+    #about-me {
+        margin: 40px auto;
+        padding: 0 1.5rem;
     }
 
     .about-paragraph p {
@@ -162,194 +275,194 @@ i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color
     }
 }
 
+@media (max-width: 480px) {
+    #about {
+        padding: 20px 15px;
+    }
+    
+    .sections h1 {
+        font-size: 1.6rem;
+    }
+    
+    .about-paragraph {
+        padding: 20px;
+    }
+}
+
 /*--------------------------------------------------- TECH STACK --------------------------------------------*/
 
 #techstack {
-    text-align: center;
-    padding: 40px 0;
-    background-color: #f5f5f5;
-}
-
-#techstack h1 {
     margin-bottom: 60px;
-    font-weight: 500;
-    font-size: 40px;
-}
-
-#techstack h4 {
-    font-size: 30px;
-    font-weight: 450;
 }
 
 .stack-category {
-    margin: 90px 0;
+    margin-bottom: 40px;
 }
 
 .stack-category h4 {
-    font-size: 1.2em;
+    font-size: 1.3rem;
+    color: var(--primary-navy-dark);
     margin-bottom: 20px;
-    color: #333;
+    font-weight: 600;
 }
 
 .stack-icons {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
-    padding: 0 20px;
+    gap: 25px;
 }
 
 .tech-img {
-    height: 80px;
-    transition: transform 0.3s ease;
-    border-radius: 20px;
-    box-shadow: #b2b2b2 0px 0px 10px;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    padding: 12px;
+    background-color: var(--bg-white);
+    border-radius: 12px;
+    border: 2px solid var(--border-gray);
+    transition: all 0.3s ease;
 }
 
 .tech-img:hover {
-    transform: scale(1.1);
+    transform: translateY(-5px);
+    border-color: var(--accent-blue);
+    box-shadow: 0 8px 20px var(--shadow);
 }
 
-/* ✅ Medium-sized screens (tablets, small laptops) */
-@media (min-width: 768px) {
-    .tech-img {
-        height: 100px;
-        border-radius: 10px;
-    }
-
+/* Small screens (mobile phones) */
+@media (max-width: 768px) {
     .stack-category h4 {
-        font-size: 1.8em;
+        font-size: 1.2rem;
     }
-
-    #techstack {
-        padding: 50px 0;
-    }
-}
-
-/* ✅ Large screens (desktops, full HD) */
-@media (min-width: 1200px) {
+    
     .tech-img {
-        height: 200px;
-        border-radius: 10px;
-    }
-
-    .stack-icons {
-        gap: 60px;
-    }
-
-    .stack-category h4 {
-        font-size: 2em;
-    }
-
-    #techstack {
-        padding: 60px 0;
-    }
-}
-
-/* ✅ Small screens (mobile phones) */
-@media (max-width: 600px) {
-    .tech-img {
+        width: 60px;
         height: 60px;
-        border-radius: 10px;
     }
 
     .stack-icons {
         gap: 20px;
     }
+}
+
+@media (max-width: 480px) {
+    .tech-img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* Medium-sized screens (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tech-img {
+        width: 80px;
+        height: 80px;
+    }
 
     .stack-category h4 {
-        font-size: 1.3em;
+        font-size: 1.4rem;
+    }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+    .tech-img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .stack-icons {
+        gap: 50px;
     }
 }
 
 /*--------------------------------------------------- PROJECTS --------------------------------------------*/
 
-.section-title {
-    text-align: center;
-    font-size: 40px;
-    font-weight: 500;
-    margin-top: 60px;
-    margin-bottom: 70px;
-    color: #222;
-}
-
 .project-container {
     display: flex;
-    justify-content: center;
+    gap: 50px;
     align-items: flex-start;
-    gap: 60px;
-    /* Padding between left and right */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
+    margin-top: 40px;
 }
 
 /* LEFT: Logo + Description */
 .project-left {
     flex: 1;
-    max-width: 450px;
     display: flex;
     flex-direction: column;
+    gap: 30px;
     align-items: center;
-    /* centers logo and paragraph */
-    text-align: center;
 }
 
 .project-logo {
-    width: 200px;
-    margin-bottom: 20px;
-}
-
-.project-logo:hover {
-    transform: scale(1);
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
 }
 
 .project-description {
-    font-size: 22px;
-    line-height: 1.6;
-    color: #333;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    text-align: justify;
 }
 
 /* RIGHT: Images */
 .project-right {
-    flex: 1.2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 20px;
-    align-items: center;
-    height: auto;
 }
 
 .project-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: 0.5s ease;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
+    transition: transform 0.3s ease;
 }
 
-#project-top-img:hover {
-    transform: translateX(-250px)
-    translateY(100px)
-    scale(1.5)
-}
-
+.project-image:hover,
+#project-top-img:hover,
 #project-middle-img:hover {
-    transform: translateX(-250px)
-    translateY(0px)
-    scale(1.5)
+    transform: scale(1.02);
 }
 
-.project-image:hover {
-    transform: translateX(-250px)
-    translateY(-100px)
-    scale(1.5)
+/* Mobile Responsive layout */
+@media (max-width: 1024px) {
+    .project-container {
+        gap: 40px;
+    }
 }
 
-/* Responsive layout for smaller screens */
-@media (max-width: 1068px) {
+@media (max-width: 768px) {
+    .project-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .project-left,
+    .project-right {
+        max-width: 100%;
+        align-items: center;
+        text-align: center;
+        min-width: auto;
+    }
+
+    .project-description {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .project-logo {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1068px) {
     .project-container {
         flex-direction: column;
         align-items: center;
@@ -362,51 +475,25 @@ i:hover { /* Hovering over font awesome icons with scale to 1.2 and change color
         align-items: center;
         text-align: center;
     }
-
-    .project-description {
-        font-size: 1rem;
-        padding: 0 10px;
-    }
-
-    .project-logo {
-        width: 150px;
-    }
-    
-    .project-image:hover {
-        transform: translateX(0px)
-        translateY(0px)
-        scale(1)
-    }
-    #project-top-img:hover {
-    transform: translateX(0px)
-    translateY(0px)
-    scale(1)
-    }
-
-    #project-middle-img:hover {
-        transform: translateX(0px)
-        translateY(0px)
-        scale(1)
-    }
 }
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
 footer {
-    background: linear-gradient(to top, #03394d, #022F40);/* Makes background of header White */
-    /* Purple gradient */
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
     color: white;
     text-align: center;
-    padding: 5px 10px;
-    font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-    z-index: 1;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 0.95rem;
 }
 
 /* Responsive footer text */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     footer {
         font-size: 0.9rem;
-        padding: 16px 8px;
+        padding: 20px 8px;
     }
 }

@@ -1,56 +1,155 @@
 * {
     font-weight: 400;
     font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Executive Tech Leadership Color Scheme */
+    --primary-navy: #1e3a5f;
+    --primary-navy-dark: #0f1e30;
+    --primary-navy-light: #2c5282;
+    --accent-blue: #3b82f6;
+    --accent-light: #60a5fa;
+    --text-dark: #1a202c;
+    --text-light: #64748b;
+    --bg-white: #ffffff;
+    --bg-gray: #f8fafc;
+    --border-gray: #e2e8f0;
+    --shadow: rgba(30, 58, 95, 0.12);
 }
 
 body {
     padding: 0;
     margin: 0;
-    background-color: #ffffff;
+    background-color: var(--bg-gray);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
-
-
 
 /* ------------------------------------------------ CONTACT CONTAINER ------------------------------------------------ */
 
-form { /* Form placement in the middle of the page */
-    position: relative;
-    top: 150px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    padding: 30px 30px;
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    flex: 1;
 }
 
-.contact-container h1 { /* Changed size and position of h1 tag */
-    top: 150px;
+.contact-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-navy);
+    margin-bottom: 40px;
+}
+
+form {
     display: flex;
-    position: relative;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px var(--shadow);
 }
 
-#textbox { /* Making textbox different size compared to original */
-    width: 400px;
-    height: 200px;
+form input,
+form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid var(--border-gray);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    transition: border-color 0.3s ease;
 }
 
-.contact-container button {
-    margin-top: 20px;
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+#textbox {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button {
+    background: linear-gradient(135deg, var(--primary-navy), var(--accent-blue));
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--shadow);
+}
+
+form button:active {
+    transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 60px 15px;
+    }
+    
+    .contact-container h1 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+    
+    form {
+        padding: 30px 20px;
+    }
+    
+    form input,
+    form textarea {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+    
+    #textbox {
+        min-height: 120px;
+    }
+    
+    form button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
 }
 
 
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
 footer {
-    background: linear-gradient(to top, #03394d, #022F40);
-    /* Purple gradient */
+    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
     color: white;
     text-align: center;
-    padding: 5px 10px;
+    padding: 30px 10px;
     font-size: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-    bottom: -70vh;
-    z-index: 1;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.9rem;
+        padding: 20px 8px;
+    }
 }
