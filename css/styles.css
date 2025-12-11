@@ -211,7 +211,7 @@ main {
 }
 
 .about-paragraph p {
-    font-size: 1.05rem;
+    font-size: 1.125rem;
     color: var(--text-dark);
     line-height: 1.8;
 }
@@ -272,7 +272,7 @@ main {
     }
 
     .about-paragraph p {
-        font-size: 1rem;
+        font-size: 1.0625rem;
     }
 }
 
@@ -288,6 +288,11 @@ main {
     .about-paragraph {
         padding: 30px 25px;
         margin-bottom: 35px;
+    }
+
+    .about-paragraph p {
+        font-size: 1rem;
+        line-height: 1.7;
     }
 }
 
