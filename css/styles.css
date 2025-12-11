@@ -496,6 +496,10 @@ main {
 }
 
 @media (max-width: 768px) {
+    .project-section {
+        padding: 30px 15px;
+    }
+
     .project-container {
         flex-direction: column;
         gap: 30px;
@@ -503,21 +507,22 @@ main {
 
     .project-left,
     .project-right {
+        width: 100%;
         max-width: 100%;
-        align-items: center;
-        text-align: center;
+        align-items: stretch;
         min-width: auto;
     }
 
     .project-description {
         font-size: 0.9375rem;
-        padding: 0 10px;
+        padding: 0;
         text-align: left;
+        width: 100%;
     }
 
     .project-logo {
         max-width: 250px;
-        margin: 0 auto;
+        margin: 0 auto 20px auto;
     }
 }
 
@@ -534,6 +539,28 @@ main {
         max-width: 100%;
         align-items: center;
         text-align: center;
+    }
+}
+
+/* Small mobile optimization */
+@media (max-width: 480px) {
+    .project-section {
+        padding: 25px 12px;
+    }
+
+    .project-left {
+        align-items: stretch;
+    }
+
+    .project-description {
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        padding: 0;
+        text-align: left;
+    }
+
+    .project-logo {
+        max-width: 200px;
     }
 }
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
