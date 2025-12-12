@@ -5,25 +5,28 @@
 }
 
 :root {
-    /* Executive Tech Leadership Color Scheme */
-    --primary-navy: #1e3a5f;
-    --primary-navy-dark: #0f1e30;
-    --primary-navy-light: #2c5282;
-    --accent-blue: #3b82f6;
-    --accent-light: #60a5fa;
-    --text-dark: #1a202c;
-    --text-light: #64748b;
+    /* Soft compliance-inspired palette */
+    --primary-navy: #1f2438;
+    --primary-navy-dark: #111527;
+    --primary-navy-light: #2f3652;
+    --accent-blue: #7c3aed;
+    --accent-light: #a78bfa;
+    --text-dark: #0f172a;
+    --text-light: #636b78;
     --bg-white: #ffffff;
-    --bg-gray: #f8fafc;
-    --border-gray: #e2e8f0;
-    --shadow: rgba(30, 58, 95, 0.12);
+    --bg-gray: #f5f4fb;
+    --border-gray: #e6e4f3;
+    --shadow: rgba(31, 36, 56, 0.12);
+    --glass: rgba(255, 255, 255, 0.78);
+    --card-shadow: 0 20px 45px rgba(31, 36, 56, 0.14);
 }
 
 body {
-    background-color: var(--bg-gray);
+    background: radial-gradient(circle at 20% 20%, #f2ebff 0%, #eef4ff 35%, #e7f6ff 70%, #f7f7ff 100%);
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 
@@ -33,49 +36,60 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 5%;
-    background: linear-gradient(135deg, var(--bg-white) 0%, var(--bg-gray) 100%);
-    min-height: 80vh;
-    gap: 100px;
-    max-width: 1800px;
-    margin: 0 auto;
+    padding: 96px 6%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 242, 255, 0.95) 100%);
+    border-radius: 32px;
+    min-height: 75vh;
+    gap: 72px;
+    max-width: 1200px;
+    margin: 32px auto;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
 }
 
 .intro-header {
     flex: 1;
-    max-width: 700px;
+    max-width: 620px;
 }
 
 .intro-header h4 {
-    color: var(--text-light);
-    font-size: 1.2rem;
-    font-weight: 400;
-    margin-bottom: 10px;
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    font-weight: 600;
+    background: rgba(124, 58, 237, 0.12);
+    display: inline-flex;
+    padding: 10px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
 }
 
 .intro-header h1 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 4.5rem;
+    font-size: 3.6rem;
     font-weight: 800;
     color: var(--primary-navy);
-    margin-bottom: 15px;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
 }
 
 .intro-header h3 {
-    color: var(--text-dark);
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 30px;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 32px;
 }
 
 /* -----FONT AWESOME ICONS----- */
 
 .intro-header a {
-    margin-right: 20px;
+    margin-right: 16px;
     transition: all 0.3s ease;
     display: inline-block;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(124, 58, 237, 0.08);
 }
 
 #linkedin { color: #0077b5; }
@@ -88,17 +102,19 @@ body {
     filter: brightness(1.2);
 }
 
+
 .portrait {
     flex: 0 0 auto;
 }
 
 .portrait img {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
+    width: 360px;
+    height: 360px;
+    border-radius: 28px;
     object-fit: cover;
-    box-shadow: 0 10px 40px var(--shadow);
+    box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
+    border: 8px solid rgba(255, 255, 255, 0.9);
 }
 
 .portrait img:hover {
@@ -107,8 +123,8 @@ body {
 
 @media (max-width: 1024px) {
     .intro-container {
-        padding: 60px 5%;
-        gap: 40px;
+        padding: 72px 6%;
+        gap: 48px;
     }
     
     .intro-header h1 {
@@ -116,8 +132,8 @@ body {
     }
     
     .portrait img {
-        width: 280px;
-        height: 280px;
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -125,8 +141,9 @@ body {
     .intro-container {
         flex-direction: column;
         text-align: center;
-        padding: 40px 5%;
+        padding: 56px 6%;
         min-height: auto;
+        margin: 24px auto;
     }
     
     .intro-header {
@@ -135,7 +152,7 @@ body {
     }
     
     .intro-header h1 {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
     
     .intro-header h4 {
@@ -143,16 +160,16 @@ body {
     }
     
     .intro-header h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     
     .intro-header a {
-        margin-right: 15px;
+        margin-right: 0;
     }
     
     .portrait img {
-        width: 250px;
-        height: 250px;
+        width: 240px;
+        height: 240px;
         margin-top: 2rem;
     }
 }
@@ -179,19 +196,21 @@ body {
 /* ------------------------------------------------ ABOUT CONTAINER ------------------------------------------------ */
 
 main {
-    padding: 60px 5%;
-    max-width: 1800px;
+    padding: 72px 5%;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 56px;
 }
 
 #about {
-    background-color: var(--bg-white);
-    border-radius: 20px;
-    padding: 60px 80px;
-    box-shadow: 0 5px 30px var(--shadow);
+    background-color: var(--glass);
+    border-radius: 28px;
+    padding: 56px 64px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-gray);
+    backdrop-filter: blur(8px);
 }
 
 #about h1 {
@@ -203,17 +222,18 @@ main {
 }
 
 .about-paragraph {
-    background-color: var(--bg-gray);
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 70px;
-    border-left: 4px solid var(--accent-blue);
+    background-color: #f7f5ff;
+    padding: 28px;
+    border-radius: 18px;
+    margin-bottom: 48px;
+    border: 1px solid var(--border-gray);
+    box-shadow: 0 10px 30px rgba(17, 23, 42, 0.06);
 }
 
 .about-paragraph p {
-    font-size: 1.125rem;
+    font-size: 1.05rem;
     color: var(--text-dark);
-    line-height: 1.8;
+    line-height: 1.75;
     text-align: left;
 }
 
@@ -315,12 +335,10 @@ main {
 
 .sections h1 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2.4rem;
+    font-weight: 800;
     color: var(--primary-navy);
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom: 3px solid var(--accent-blue);
+    margin-bottom: 18px;
     letter-spacing: -0.02em;
 }
 
@@ -337,10 +355,12 @@ main {
 /*--------------------------------------------------- TECH STACK --------------------------------------------*/
 
 #techstack {
-    background-color: var(--bg-white);
-    border-radius: 20px;
-    padding: 60px 80px;
-    box-shadow: 0 5px 30px var(--shadow);
+    background-color: var(--glass);
+    border-radius: 28px;
+    padding: 56px 64px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-gray);
+    backdrop-filter: blur(8px);
 }
 
 #techstack h1 {
@@ -352,10 +372,11 @@ main {
 }
 
 .stack-category h4 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--primary-navy-dark);
-    margin-bottom: 20px;
-    font-weight: 600;
+    margin-bottom: 14px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .stack-icons {
@@ -372,21 +393,23 @@ main {
 }
 
 .tech-img {
-    width: 90px;
-    height: 90px;
+    width: 96px;
+    height: 96px;
     object-fit: contain;
-    padding: 12px;
+    padding: 14px;
     background-color: var(--bg-white);
-    border-radius: 12px;
-    border: 2px solid var(--border-gray);
+    border-radius: 18px;
+    border: 1px solid var(--border-gray);
     transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(31, 36, 56, 0.08);
 }
 
 .tech-label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--text-dark);
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
+    letter-spacing: -0.01em;
 }
 
 .tech-img:hover {
@@ -406,12 +429,12 @@ main {
     }
 
     .tech-img {
-        width: 75px;
-        height: 75px;
+        width: 82px;
+        height: 82px;
     }
 
     .tech-label {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     .stack-icons {
@@ -422,16 +445,16 @@ main {
 
 @media (max-width: 480px) {
     .tech-img {
-        width: 68px;
-        height: 68px;
+        width: 74px;
+        height: 74px;
     }
 
     .tech-label {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
     }
 
     .stack-icons {
-        gap: 18px;
+        gap: 16px;
     }
 }
 
@@ -462,17 +485,19 @@ main {
 /*--------------------------------------------------- PROJECTS --------------------------------------------*/
 
 .project-section {
-    background-color: var(--bg-white);
-    border-radius: 20px;
-    padding: 60px 80px;
-    box-shadow: 0 5px 30px var(--shadow);
+    background-color: var(--glass);
+    border-radius: 28px;
+    padding: 56px 64px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-gray);
+    backdrop-filter: blur(8px);
 }
 
 .project-container {
     display: flex;
-    gap: 50px;
+    gap: 48px;
     align-items: flex-start;
-    margin-top: 40px;
+    margin-top: 32px;
 }
 
 /* LEFT: Logo + Description */
@@ -486,14 +511,15 @@ main {
 
 .project-logo {
     width: 100%;
-    max-width: 350px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px var(--shadow);
+    max-width: 340px;
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(31, 36, 56, 0.16);
+    border: 1px solid var(--border-gray);
 }
 
 .project-description {
-    font-size: 1.05rem;
-    line-height: 1.8;
+    font-size: 1.02rem;
+    line-height: 1.7;
     color: var(--text-dark);
     text-align: left;
 }
@@ -508,9 +534,10 @@ main {
 
 .project-image {
     width: 100%;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px var(--shadow);
+    border-radius: 18px;
+    box-shadow: 0 12px 32px rgba(31, 36, 56, 0.14);
     transition: transform 0.3s ease;
+    border: 1px solid var(--border-gray);
 }
 
 .project-image:hover,
@@ -597,21 +624,44 @@ main {
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
 footer {
-    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
-    color: white;
+    background: var(--glass);
+    color: var(--text-dark);
     text-align: center;
-    padding: 30px;
-    margin-top: 60px;
+    padding: 28px 24px;
+    margin: 72px auto 48px auto;
+    max-width: 1200px;
+    border-radius: 20px;
+    border: 1px solid var(--border-gray);
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(8px);
 }
 
 footer p {
-    font-size: 0.95rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
 }
 
-/* Responsive footer text */
+footer .footer-subtle {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+/* Responsive footer */
 @media (max-width: 768px) {
     footer {
-        font-size: 0.9rem;
-        padding: 20px 8px;
+        font-size: 0.92rem;
+        padding: 22px 16px;
+        margin: 56px auto 32px auto;
+        border-radius: 16px;
+    }
+
+    footer p {
+        font-size: 0.94rem;
+    }
+
+    footer .footer-subtle {
+        font-size: 0.86rem;
     }
 }
