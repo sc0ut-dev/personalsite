@@ -1,28 +1,32 @@
 * {
     font-weight: 400;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
     box-sizing: border-box;
+    letter-spacing: -0.01em;
 }
 
 :root {
-    /* Executive Tech Leadership Color Scheme */
-    --primary-navy: #1e3a5f;
-    --primary-navy-dark: #0f1e30;
-    --primary-navy-light: #2c5282;
-    --accent-blue: #3b82f6;
-    --accent-light: #60a5fa;
-    --text-dark: #1a202c;
-    --text-light: #64748b;
+    --purple: #2b124c;
     --bg-white: #ffffff;
-    --bg-gray: #f8fafc;
-    --border-gray: #e2e8f0;
-    --shadow: rgba(30, 58, 95, 0.12);
+    --bg-gray: #f7f7f5;
+    --text-dark: #1b1b1f;
+    --text-light: rgba(27, 27, 31, 0.72);
+    --border-gray: rgba(27, 27, 31, 0.12);
+    --shadow: rgba(0, 0, 0, 0.12);
+
+    --primary-navy: var(--purple);
+    --primary-navy-dark: var(--purple);
+    --primary-navy-light: var(--purple);
+    --accent-blue: var(--purple);
+    --accent-light: var(--purple);
+    --panel: var(--bg-white);
+    --panel-soft: var(--bg-gray);
 }
 
 body {
     padding: 0;
     margin: 0;
-    background-color: var(--bg-gray);
+    background: var(--bg-gray);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,8 +35,8 @@ body {
 /* -----------------------Resume iFrame---------------------------*/
 
 .iframe-resume {
-    max-width: 900px;
-    margin: 50px auto;
+    max-width: 1200px;
+    margin: 70px auto 60px auto;
     padding: 20px;
     position: relative;
     aspect-ratio: 8.5 / 11;
@@ -44,45 +48,49 @@ body {
     height: 100%;
     border: none;
     display: block;
-    box-shadow: 0 8px 30px var(--shadow);
-    border-radius: 10px;
+    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.45);
+    border-radius: 16px;
+    border: 1px solid var(--border-gray);
+    background: var(--panel);
 }
 
 /* Mobile and Tablet Responsive */
 @media (max-width: 768px) {
     .iframe-resume {
-        padding: 15px;
+        padding: 16px;
         max-width: 100%;
-        margin: 30px auto;
+        margin: 36px auto;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .iframe-resume {
-        max-width: 95%;
-        padding: 20px;
+        max-width: 94%;
+        padding: 18px;
     }
 }
 
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
-footer {
-    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
-    color: white;
+.footer {
+    background: var(--panel);
+    color: var(--text-dark);
     text-align: center;
-    padding: 30px 10px;
+    padding: 28px 12px;
     font-size: 1rem;
     margin-top: auto;
+    border-top: 1px solid var(--border-gray);
 }
 
-footer p {
-    font-size: 0.95rem;
+.footer p {
+    font-size: 0.96rem;
     margin: 0;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
-    footer {
-        font-size: 0.9rem;
-        padding: 20px 8px;
+    .footer {
+        font-size: 0.92rem;
+        padding: 22px 10px;
     }
 }

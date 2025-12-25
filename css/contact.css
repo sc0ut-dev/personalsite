@@ -1,28 +1,32 @@
 * {
     font-weight: 400;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
     box-sizing: border-box;
+    letter-spacing: -0.01em;
 }
 
 :root {
-    /* Executive Tech Leadership Color Scheme */
-    --primary-navy: #1e3a5f;
-    --primary-navy-dark: #0f1e30;
-    --primary-navy-light: #2c5282;
-    --accent-blue: #3b82f6;
-    --accent-light: #60a5fa;
-    --text-dark: #1a202c;
-    --text-light: #64748b;
+    --purple: #2b124c;
     --bg-white: #ffffff;
-    --bg-gray: #f8fafc;
-    --border-gray: #e2e8f0;
-    --shadow: rgba(30, 58, 95, 0.12);
+    --bg-gray: #f7f7f5;
+    --text-dark: #1b1b1f;
+    --text-light: rgba(27, 27, 31, 0.72);
+    --border-gray: rgba(27, 27, 31, 0.12);
+    --shadow: rgba(0, 0, 0, 0.12);
+
+    --primary-navy: var(--purple);
+    --primary-navy-dark: var(--purple);
+    --primary-navy-light: var(--purple);
+    --accent-blue: var(--purple);
+    --accent-light: var(--purple);
+    --panel: var(--bg-white);
+    --panel-soft: var(--bg-gray);
 }
 
 body {
     padding: 0;
     margin: 0;
-    background-color: var(--bg-gray);
+    background: var(--bg-gray);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -31,45 +35,57 @@ body {
 /* ------------------------------------------------ CONTACT CONTAINER ------------------------------------------------ */
 
 .contact-container {
-    max-width: 600px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 96px 24px 80px 24px;
     flex: 1;
 }
 
 .contact-container h1 {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: var(--primary-navy);
-    margin-bottom: 40px;
+    font-size: 2.7rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+    letter-spacing: -0.02em;
+}
+
+.contact-container .lede {
+    text-align: center;
+    color: var(--text-light);
+    max-width: 540px;
+    margin: 0 auto 36px auto;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px var(--shadow);
+    gap: 18px;
+    background: var(--panel);
+    padding: 44px;
+    border-radius: 16px;
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.35);
+    border: 1px solid var(--border-gray);
 }
 
 form input,
 form textarea {
     width: 100%;
-    padding: 15px;
-    border: 2px solid var(--border-gray);
-    border-radius: 8px;
+    padding: 14px 16px;
+    border: 1px solid var(--border-gray);
+    border-radius: 12px;
     font-size: 1rem;
-    font-family: "Montserrat", sans-serif;
-    transition: border-color 0.3s ease;
+    font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    background: var(--panel-soft);
+    color: var(--text-dark);
 }
 
 form input:focus,
 form textarea:focus {
     outline: none;
     border-color: var(--accent-blue);
+    box-shadow: 0 0 0 4px rgba(43, 18, 76, 0.18);
 }
 
 #textbox {
@@ -78,21 +94,23 @@ form textarea:focus {
 }
 
 form button {
-    background: linear-gradient(135deg, var(--primary-navy), var(--accent-blue));
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 500;
+    background: var(--primary-navy);
+    color: #ffffff;
+    padding: 14px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
+    transition: all 0.25s ease;
+    margin-top: 6px;
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.16);
 }
 
 form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px var(--shadow);
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.18);
+    background: var(--primary-navy);
 }
 
 form button:active {
@@ -102,30 +120,35 @@ form button:active {
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .contact-container {
-        padding: 60px 15px;
+        padding: 72px 16px 60px 16px;
     }
     
     .contact-container h1 {
-        font-size: 2rem;
-        margin-bottom: 30px;
+        font-size: 2.3rem;
+        margin-bottom: 12px;
+    }
+
+    .contact-container .lede {
+        font-size: 1rem;
+        margin-bottom: 28px;
     }
     
     form {
-        padding: 30px 20px;
+        padding: 32px 20px;
     }
     
     form input,
     form textarea {
-        padding: 12px;
-        font-size: 0.95rem;
+        padding: 12px 14px;
+        font-size: 0.97rem;
     }
     
     #textbox {
-        min-height: 120px;
+        min-height: 130px;
     }
     
     form button {
-        padding: 12px 25px;
+        padding: 12px 18px;
         font-size: 1rem;
     }
 }
@@ -134,22 +157,24 @@ form button:active {
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
 footer {
-    background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-navy-dark) 100%);
-    color: white;
+    background: var(--panel);
+    color: var(--text-dark);
     text-align: center;
-    padding: 30px 10px;
+    padding: 28px 12px;
     font-size: 1rem;
     margin-top: auto;
+    border-top: 1px solid var(--border-gray);
 }
 
 footer p {
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     margin: 0;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
     footer {
-        font-size: 0.9rem;
-        padding: 20px 8px;
+        font-size: 0.92rem;
+        padding: 22px 10px;
     }
 }

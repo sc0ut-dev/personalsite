@@ -5,133 +5,243 @@
 }
 
 :root {
-    /* Soft compliance-inspired palette */
-    --primary-navy: #1f2438;
-    --primary-navy-dark: #111527;
-    --primary-navy-light: #2f3652;
-    --accent-blue: #7c3aed;
-    --accent-light: #a78bfa;
-    --text-dark: #0f172a;
-    --text-light: #636b78;
+    /* Neutral theme */
+    --purple: #2b124c;
     --bg-white: #ffffff;
-    --bg-gray: #f5f4fb;
-    --border-gray: #e6e4f3;
-    --shadow: rgba(31, 36, 56, 0.12);
-    --glass: rgba(255, 255, 255, 0.78);
-    --card-shadow: 0 20px 45px rgba(31, 36, 56, 0.14);
+    --bg-gray: #f7f7f5;
+    --text-dark: #1b1b1f;
+    --text-light: rgba(27, 27, 31, 0.72);
+    --border-gray: rgba(27, 27, 31, 0.12);
+    --shadow: rgba(0, 0, 0, 0.12);
+    --glass: rgba(255, 255, 255, 0.9);
+    --card-shadow: 0 22px 46px rgba(0, 0, 0, 0.14);
+
+    /* Theme primitives mapped onto neutral theme */
+    --primary-navy: var(--purple);
+    --primary-navy-dark: var(--purple);
+    --primary-navy-light: var(--purple);
+    --accent-blue: var(--purple);
+    --accent-light: var(--purple);
+    --panel: var(--bg-white);
+    --panel-soft: var(--bg-gray);
 }
 
 body {
-    background: radial-gradient(circle at 20% 20%, #f2ebff 0%, #eef4ff 35%, #e7f6ff 70%, #f7f7ff 100%);
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg-gray);
+    font-family: "Space Grotesk", "SF Pro Display", "Segoe UI", sans-serif;
     color: var(--text-dark);
     line-height: 1.6;
     min-height: 100vh;
+    letter-spacing: -0.01em;
 }
 
 
 /* ------------------------------------------------ INTRO CONTAINER ------------------------------------------------ */
 
+
 .intro-container {
+    position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 96px 6%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(246, 242, 255, 0.95) 100%);
-    border-radius: 32px;
-    min-height: 75vh;
-    gap: 72px;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 110px 8%;
+    margin: 32px auto 40px auto;
     max-width: 1200px;
-    margin: 32px auto;
+    background: var(--bg-white);
+    border-radius: 28px;
+    overflow: hidden;
+    color: var(--text-dark);
     box-shadow: var(--card-shadow);
-    backdrop-filter: blur(10px);
+}
+
+.intro-container::before,
+.intro-container::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(0);
+    opacity: 0;
+}
+
+.intro-container::before {
+    width: 420px;
+    height: 420px;
+    background: none;
+    top: -60px;
+    left: -80px;
+}
+
+.intro-container::after {
+    width: 520px;
+    height: 520px;
+    background: none;
+    bottom: -140px;
+    right: -140px;
 }
 
 .intro-header {
     flex: 1;
-    max-width: 620px;
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
 }
 
-.intro-header h4 {
-    color: var(--accent-blue);
-    font-size: 0.95rem;
-    font-weight: 600;
-    background: rgba(124, 58, 237, 0.12);
+.eyebrow {
     display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-gray);
+    color: var(--primary-navy);
     padding: 10px 14px;
     border-radius: 999px;
-    margin-bottom: 12px;
-    letter-spacing: 0.01em;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(43, 18, 76, 0.18);
 }
 
 .intro-header h1 {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    font-size: 3.6rem;
-    font-weight: 800;
-    color: var(--primary-navy);
-    margin-bottom: 16px;
-    line-height: 1.05;
-    letter-spacing: -0.03em;
+    font-size: 3.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 14px 0 8px 0;
+    line-height: 1.04;
 }
 
 .intro-header h3 {
     color: var(--text-light);
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 32px;
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-/* -----FONT AWESOME ICONS----- */
+.lede {
+    color: var(--text-light);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin-bottom: 28px;
+}
 
-.intro-header a {
-    margin-right: 16px;
-    transition: all 0.3s ease;
-    display: inline-block;
-    padding: 12px;
+.cta-row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
     border-radius: 12px;
-    background: rgba(124, 58, 237, 0.08);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    border: 1px solid var(--border-gray);
+    color: var(--text-dark);
 }
 
-#linkedin { color: #0077b5; }
-#instagram { color: #E1306C; }
-#youtube { color: #FF0000; }
-#github { color: var(--text-dark); }
-
-.intro-header a:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.2);
+.btn.primary {
+    background: var(--primary-navy);
+    color: #ffffff;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.16);
 }
 
+.btn.ghost {
+    background: var(--bg-white);
+    color: var(--primary-navy);
+    border-color: rgba(43, 18, 76, 0.22);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 32px rgba(0, 0, 0, 0.16);
+}
+
+.social-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.social-row a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-white);
+    color: var(--primary-navy);
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease;
+    border: 1px solid var(--border-gray);
+}
+
+#linkedin,
+#instagram,
+#youtube,
+#github {
+    color: var(--primary-navy);
+}
+
+.social-row a:hover {
+    transform: translateY(-3px);
+    background: var(--bg-gray);
+}
 
 .portrait {
-    flex: 0 0 auto;
+    position: relative;
+    flex: 0 0 380px;
+    display: grid;
+    place-items: center;
+    z-index: 1;
 }
+
+.portrait-glow {
+    position: absolute;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: none;
+    filter: blur(0px);
+    z-index: 0;
+}
+
 
 .portrait img {
     width: 360px;
     height: 360px;
-    border-radius: 28px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: var(--card-shadow);
+    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.45);
     transition: transform 0.3s ease;
-    border: 8px solid rgba(255, 255, 255, 0.9);
+    border: 10px solid rgba(255, 255, 255, 0.18);
+    position: relative;
+    z-index: 1;
 }
 
 .portrait img:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px) scale(1.01);
 }
 
 @media (max-width: 1024px) {
     .intro-container {
-        padding: 72px 6%;
-        gap: 48px;
+        padding: 90px 6%;
+        gap: 40px;
     }
     
     .intro-header h1 {
-        font-size: 3rem;
+        font-size: 3.3rem;
     }
     
-    .portrait img {
+    .portrait,
+    .portrait img,
+    .portrait-glow {
         width: 300px;
         height: 300px;
     }
@@ -139,11 +249,10 @@ body {
 
 @media (max-width: 768px) {
     .intro-container {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
-        padding: 56px 6%;
-        min-height: auto;
-        margin: 24px auto;
+        padding: 72px 7%;
+        margin: 18px auto 26px auto;
     }
     
     .intro-header {
@@ -152,42 +261,52 @@ body {
     }
     
     .intro-header h1 {
-        font-size: 2.6rem;
+        font-size: 2.9rem;
     }
-    
-    .intro-header h4 {
-        font-size: 1rem;
-    }
-    
+
     .intro-header h3 {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+    }
+
+    .cta-row {
+        justify-content: center;
+    }
+
+    .social-row {
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
-    .intro-header a {
-        margin-right: 0;
-    }
-    
-    .portrait img {
+    .portrait,
+    .portrait img,
+    .portrait-glow {
         width: 240px;
         height: 240px;
-        margin-top: 2rem;
     }
 }
 
 @media (max-width: 480px) {
     .intro-header h1 {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
     
     .intro-header h3 {
-        font-size: 1rem;
+        font-size: 1.05rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cta-row {
+        flex-direction: column;
+        gap: 10px;
     }
     
-    .intro-header i {
-        font-size: 1.5rem !important;
-    }
-    
-    .portrait img {
+    .portrait,
+    .portrait img,
+    .portrait-glow {
         width: 200px;
         height: 200px;
     }
@@ -197,7 +316,7 @@ body {
 
 main {
     padding: 72px 5%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -205,12 +324,11 @@ main {
 }
 
 #about {
-    background-color: var(--glass);
-    border-radius: 28px;
+    background-color: var(--panel);
+    border-radius: 24px;
     padding: 56px 64px;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-gray);
-    backdrop-filter: blur(8px);
 }
 
 #about h1 {
@@ -222,17 +340,17 @@ main {
 }
 
 .about-paragraph {
-    background-color: #f7f5ff;
+    background-color: var(--panel-soft);
     padding: 28px;
     border-radius: 18px;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
     border: 1px solid var(--border-gray);
-    box-shadow: 0 10px 30px rgba(17, 23, 42, 0.06);
+    box-shadow: var(--card-shadow);
 }
 
 .about-paragraph p {
     font-size: 1.05rem;
-    color: var(--text-dark);
+    color: var(--text-light);
     line-height: 1.75;
     text-align: left;
 }
@@ -333,11 +451,12 @@ main {
     }
 }
 
+
 .sections h1 {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 2.4rem;
     font-weight: 800;
-    color: var(--primary-navy);
+    color: var(--text-dark);
     margin-bottom: 18px;
     letter-spacing: -0.02em;
 }
@@ -346,7 +465,7 @@ main {
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--primary-navy);
+    color: var(--text-dark);
     text-align: center;
     margin: 0;
     letter-spacing: -0.02em;
@@ -355,12 +474,11 @@ main {
 /*--------------------------------------------------- TECH STACK --------------------------------------------*/
 
 #techstack {
-    background-color: var(--glass);
-    border-radius: 28px;
+    background-color: var(--panel);
+    border-radius: 24px;
     padding: 56px 64px;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-gray);
-    backdrop-filter: blur(8px);
 }
 
 #techstack h1 {
@@ -373,7 +491,7 @@ main {
 
 .stack-category h4 {
     font-size: 1.2rem;
-    color: var(--primary-navy-dark);
+    color: var(--text-dark);
     margin-bottom: 14px;
     font-weight: 700;
     letter-spacing: -0.01em;
@@ -397,11 +515,11 @@ main {
     height: 96px;
     object-fit: contain;
     padding: 14px;
-    background-color: var(--bg-white);
+    background-color: var(--panel-soft);
     border-radius: 18px;
     border: 1px solid var(--border-gray);
     transition: all 0.3s ease;
-    box-shadow: 0 8px 20px rgba(31, 36, 56, 0.08);
+    box-shadow: var(--card-shadow);
 }
 
 .tech-label {
@@ -485,12 +603,11 @@ main {
 /*--------------------------------------------------- PROJECTS --------------------------------------------*/
 
 .project-section {
-    background-color: var(--glass);
-    border-radius: 28px;
+    background-color: var(--panel);
+    border-radius: 24px;
     padding: 56px 64px;
     box-shadow: var(--card-shadow);
     border: 1px solid var(--border-gray);
-    backdrop-filter: blur(8px);
 }
 
 .project-container {
@@ -513,14 +630,14 @@ main {
     width: 100%;
     max-width: 340px;
     border-radius: 20px;
-    box-shadow: 0 12px 32px rgba(31, 36, 56, 0.16);
+    box-shadow: var(--card-shadow);
     border: 1px solid var(--border-gray);
 }
 
 .project-description {
     font-size: 1.02rem;
     line-height: 1.7;
-    color: var(--text-dark);
+    color: var(--text-light);
     text-align: left;
 }
 
@@ -535,7 +652,7 @@ main {
 .project-image {
     width: 100%;
     border-radius: 18px;
-    box-shadow: 0 12px 32px rgba(31, 36, 56, 0.14);
+    box-shadow: var(--card-shadow);
     transition: transform 0.3s ease;
     border: 1px solid var(--border-gray);
 }
@@ -624,16 +741,15 @@ main {
 /* ------------------------------------------------ FOOTER CONTAINER ------------------------------------------------ */
 
 footer {
-    background: var(--glass);
+    background: var(--panel);
     color: var(--text-dark);
     text-align: center;
     padding: 28px 24px;
     margin: 72px auto 48px auto;
-    max-width: 1200px;
+    max-width: 1400px;
     border-radius: 20px;
     border: 1px solid var(--border-gray);
     box-shadow: var(--card-shadow);
-    backdrop-filter: blur(8px);
 }
 
 footer p {
